@@ -16,8 +16,14 @@
 
 <body>
 
-  <!-- Background video -->
-  <video class="video-bg" id="video-bg" src="bg-video.mp4?v=3" autoplay muted loop playsinline preload="auto"></video>
+  <!-- Background video from YouTube -->
+  <div class="yt-bg-container">
+    <iframe src="https://www.youtube.com/embed/2VXx-XFRGXM?autoplay=1&mute=1&loop=1&playlist=2VXx-XFRGXM&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&disablekb=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+  </div>
 
   <!-- Background audio (plays on card click) -->
   <audio id="bg-audio" src="bg-audio.mp3?v=3" loop preload="auto"></audio>

@@ -1487,3 +1487,36 @@ body {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ── YouTube Background Styles ── */
+.yt-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -999;
+    overflow: hidden;
+    background: #000;
+}
+
+.yt-bg-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .yt-bg-container iframe {
+    height: 56.25vw;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .yt-bg-container iframe {
+    width: 177.78vh;
+  }
+}
