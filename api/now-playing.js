@@ -11,6 +11,7 @@ async function getAccessToken() {
   const basic = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64');
   const res = await fetch('https://accounts.spotify.com/api/token', {
     method: 'POST',
+    cache: 'no-store',
     headers: {
       Authorization:  `Basic ${basic}`,
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -34,7 +35,10 @@ module.exports = async function handler(req, res) {
 
     const response = await fetch(
       'https://api.spotify.com/v1/me/player/currently-playing',
-      { headers: { Authorization: `Bearer ${access_token}` } }
+      {
+        headers: { Authorization: `Bearer ${access_token}` },
+        cache: 'no-store'
+      }
     );
 
     // 204 = hiçbir şey çalmıyor
